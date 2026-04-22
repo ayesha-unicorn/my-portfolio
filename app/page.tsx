@@ -316,7 +316,7 @@ export default function Home() {
                 <span>LinkedIn</span>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/ayesha-unicorn"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-[var(--bg-tertiary)] rounded-xl hover:border-[var(--accent)] border border-transparent transition-colors"
