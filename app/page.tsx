@@ -41,9 +41,18 @@ const projects = [
 
 export default function Home() {
   const [activeScene, setActiveScene] = useState("hero");
+  const [theme, setTheme] = useState("dark");
   const activeSceneRef = useRef("hero");
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = useCallback(() => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  }, []);
 
   const goToScene = useCallback((index: number) => {
     const safeIndex = Math.max(0, Math.min(index, scenes.length - 1));
@@ -106,6 +115,15 @@ export default function Home() {
           />
         ))}
       </nav>
+
+      {/* Theme Toggle */}
+      <button
+        onClick={toggleTheme}
+        className="fixed top-4 right-4 w-10 h-10 rounded-full bg-[var(--bg-secondary)] border border-[var(--border)] flex items-center justify-center text-xl cursor-pointer z-50 transition-colors hover:border-[var(--accent)]"
+        aria-label="Toggle theme"
+      >
+        {theme === "dark" ? "☀️" : "🌙"}
+      </button>
 
       {/* Hero Scene */}
       <section

@@ -11,6 +11,22 @@
   --border: #27272a;
 }
 
+[data-theme="light"] {
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f4f4f5;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --border: #e4e4e7;
+}
+
+[data-theme="light"] body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
 @theme inline {
   --color-bg-primary: var(--bg-primary);
   --color-bg-secondary: var(--bg-secondary);
