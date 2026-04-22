@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Monika Sinha | Full Stack Developer",
-  description: "Full Stack Developer with 5 years of experience building modern web applications",
+  title: "Monika Sinha | .NET Developer",
+  description: ".NET Developer with 5.5 years of experience in ASP.NET, .NET Core, MVC & RPA",
 };
 
 export default function RootLayout({

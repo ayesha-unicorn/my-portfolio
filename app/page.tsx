@@ -11,31 +11,36 @@ const scenes = [
 ];
 
 const skills = [
-  "JavaScript", "TypeScript", "React", "Next.js", "Node.js",
-  "Python", "PostgreSQL", "MongoDB", "GraphQL", "AWS",
-  "Docker", "Tailwind CSS", "REST APIs", "Git"
+  "ASP.NET", ".NET Core", "MVC", "C#", "React", "HTML", "CSS",
+  "SQL Server", "Web API", "RPA", "Automation Anywhere",
+  "Git", "Azure DevOps", "Visual Studio"
 ];
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with real-time inventory and payments",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
+    title: "Employee Management Portal",
+    description: "Web application to manage Employee Leave Data, Personal & Professional Information, Leave Apply and Approval workflows",
+    tech: ["ASP.NET Core Web API", "React", "MS SQL Server"],
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates",
-    tech: ["React", "Firebase", "Tailwind"],
+    title: "IT Help Desk",
+    description: "Technical support request management system for tracking, prioritizing and resolving IT issues",
+    tech: ["ASP.NET Core", "React JS", "SQL Server"],
   },
   {
-    title: "AI Dashboard",
-    description: "Analytics dashboard with machine learning insights",
-    tech: ["Next.js", "Python", "GraphQL", "AWS"],
+    title: "Online Test Portal",
+    description: "Online examination system for employee performance appraisal with exam scheduling and certificate generation",
+    tech: ["ASP.NET", "JavaScript", "C#", "SQL Server"],
   },
   {
-    title: "Social Media Platform",
-    description: "Full-featured social platform with real-time messaging",
-    tech: ["React", "Node.js", "MongoDB", "Socket.io"],
+    title: "Customer Expected Price Bot",
+    description: "Automation bot to read Outlook emails, download SAP reports and consolidate data into final Zedrix reports",
+    tech: ["Automation Anywhere", "VBScript", "VBA", "SQL"],
+  },
+  {
+    title: "Retailer Code Creation Bot",
+    description: "Bot to download reports from efex site and create records in DMS system",
+    tech: ["Automation Anywhere", "SQL", "Excel"],
   },
 ];
 
@@ -138,10 +143,10 @@ export default function Home() {
             Monika Sinha
           </h1>
           <p className="text-2xl md:text-3xl text-[var(--text-secondary)] mb-4">
-            Full Stack Developer
+            .NET Developer
           </p>
           <p className="text-lg text-[var(--text-secondary)] mb-8">
-            5 years of experience building beautiful digital experiences
+            5.5 years of experience in ASP.NET, .NET Core, MVC & RPA
           </p>
           <div className="flex gap-4 justify-center">
             <button
@@ -158,7 +163,7 @@ export default function Home() {
             </button>
           </div>
           <p className="mt-8 text-sm text-[var(--text-secondary)]">
-            Use arrow keys or click dots to navigate
+            Use arrow keys, swipe or click dots to navigate
           </p>
         </div>
       </section>
@@ -172,28 +177,27 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-2xl p-8">
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-6">
-              I&apos;m a passionate Full Stack Developer with 5 years of experience
-              crafting modern, scalable web applications. I love turning complex
-              problems into simple, beautiful solutions.
+              I&apos;m a passionate .NET Developer with 5.5 years of experience in
+              ASP.NET, .NET Core, MVC, and full-stack development. I specialize in
+              building robust web applications and automating business processes.
             </p>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-6">
-              My journey started with curiosity for how things work on the web,
-              and it has evolved into a career dedicated to creating exceptional
-              digital experiences. I specialize in the JavaScript/TypeScript
-              ecosystem and have worked with startups and enterprises alike.
+              I&apos;ve worked with leading companies including Affinitive Infra,
+              Calibrated Healthcare, and Brito IT Services. I&apos;m passionate about
+              learning new technologies and contributing to innovative solutions.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <div className="text-center p-4 bg-[var(--bg-tertiary)] rounded-xl">
-                <div className="text-3xl font-bold text-[var(--accent)]">5+</div>
+                <div className="text-3xl font-bold text-[var(--accent)]">5.5+</div>
                 <div className="text-[var(--text-secondary)]">Years Experience</div>
               </div>
               <div className="text-center p-4 bg-[var(--bg-tertiary)] rounded-xl">
-                <div className="text-3xl font-bold text-[var(--accent)]">30+</div>
+                <div className="text-3xl font-bold text-[var(--accent)]">5+</div>
                 <div className="text-[var(--text-secondary)]">Projects Completed</div>
               </div>
               <div className="text-center p-4 bg-[var(--bg-tertiary)] rounded-xl">
-                <div className="text-3xl font-bold text-[var(--accent)]">20+</div>
-                <div className="text-[var(--text-secondary)]">Happy Clients</div>
+                <div className="text-3xl font-bold text-[var(--accent)]">RPA</div>
+                <div className="text-[var(--text-secondary)]">Certified Professional</div>
               </div>
             </div>
           </div>
@@ -219,27 +223,27 @@ export default function Home() {
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-4">Frontend</h3>
-              <p className="text-[var(--text-secondary)]">
-                React, Next.js, TypeScript, Tailwind CSS, HTML5, CSS3
-              </p>
-            </div>
-            <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-xl p-6">
               <h3 className="text-xl font-semibold mb-4">Backend</h3>
               <p className="text-[var(--text-secondary)]">
-                Node.js, Python, PostgreSQL, MongoDB, GraphQL, REST APIs
+                ASP.NET, .NET Core, MVC, C#, Web API, SQL Server
               </p>
             </div>
             <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-4">DevOps & Cloud</h3>
+              <h3 className="text-xl font-semibold mb-4">Frontend</h3>
               <p className="text-[var(--text-secondary)]">
-                AWS, Docker, Git, CI/CD, Linux
+                React JS, HTML, CSS, JavaScript
               </p>
             </div>
             <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-4">Tools & Methods</h3>
+              <h3 className="text-xl font-semibold mb-4">RPA & Automation</h3>
               <p className="text-[var(--text-secondary)]">
-                Agile, Scrum, Figma, VS Code, Debugging, Testing
+                Automation Anywhere, UiPath, VBScript, VBA
+              </p>
+            </div>
+            <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-xl p-6">
+              <h3 className="text-xl font-semibold mb-4">Tools & Others</h3>
+              <p className="text-[var(--text-secondary)]">
+                Visual Studio 2022, SQL Server, Swagger, Git, Azure DevOps
               </p>
             </div>
           </div>
@@ -289,11 +293,18 @@ export default function Home() {
           <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-2xl p-8">
             <div className="space-y-4 mb-6">
               <a
-                href="mailto:monika@example.com"
+                href="mailto:monasinha9577@gmail.com"
                 className="flex items-center gap-4 p-4 bg-[var(--bg-tertiary)] rounded-xl hover:border-[var(--accent)] border border-transparent transition-colors"
               >
                 <span className="text-2xl">📧</span>
-                <span>monika@example.com</span>
+                <span>monasinha9577@gmail.com</span>
+              </a>
+              <a
+                href="tel:+918770776909"
+                className="flex items-center gap-4 p-4 bg-[var(--bg-tertiary)] rounded-xl hover:border-[var(--accent)] border border-transparent transition-colors"
+              >
+                <span className="text-2xl">📱</span>
+                <span>+918770776909</span>
               </a>
               <a
                 href="https://linkedin.com"
