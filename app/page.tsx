@@ -307,7 +307,7 @@ export default function Home() {
                 <span>+918770776909</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/monika-sinha-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-[var(--bg-tertiary)] rounded-xl hover:border-[var(--accent)] border border-transparent transition-colors"
