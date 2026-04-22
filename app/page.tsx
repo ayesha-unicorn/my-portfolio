@@ -42,19 +42,47 @@ const projects = [
 export default function Home() {
   const [activeScene, setActiveScene] = useState("hero");
   const activeSceneRef = useRef("hero");
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+
+  const goToScene = useCallback((index: number) => {
+    const safeIndex = Math.max(0, Math.min(index, scenes.length - 1));
+    activeSceneRef.current = scenes[safeIndex].id;
+    setActiveScene(scenes[safeIndex].id);
+  }, []);
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     const currentIndex = scenes.findIndex((s) => s.id === activeSceneRef.current);
     if (e.key === "ArrowDown" || e.key === "ArrowRight") {
-      const nextIndex = Math.min(currentIndex + 1, scenes.length - 1);
-      activeSceneRef.current = scenes[nextIndex].id;
-      setActiveScene(scenes[nextIndex].id);
+      goToScene(currentIndex + 1);
     } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
-      const prevIndex = Math.max(currentIndex - 1, 0);
-      activeSceneRef.current = scenes[prevIndex].id;
-      setActiveScene(scenes[prevIndex].id);
+      goToScene(currentIndex - 1);
     }
+  }, [goToScene]);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
   }, []);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const diffX = touchStartX.current - touchEndX;
+    const diffY = touchStartY.current - touchEndY;
+    const currentIndex = scenes.findIndex((s) => s.id === activeSceneRef.current);
+    const absDiffX = Math.abs(diffX);
+    const absDiffY = Math.abs(diffY);
+    const threshold = 50;
+    
+    if (absDiffX > threshold || absDiffY > threshold) {
+      if (absDiffX > absDiffY) {
+        diffX > 0 ? goToScene(currentIndex + 1) : goToScene(currentIndex - 1);
+      } else {
+        diffY > 0 ? goToScene(currentIndex + 1) : goToScene(currentIndex - 1);
+      }
+    }
+  }, [goToScene]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
@@ -62,7 +90,11 @@ export default function Home() {
   }, [handleKeyDown]);
 
   return (
-    <div className="relative w-full h-screen bg-[var(--bg-primary)] overflow-hidden">
+    <div 
+      className="relative w-full h-screen bg-[var(--bg-primary)] overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Navigation Dots */}
       <nav className="nav-dots">
         {scenes.map((scene) => (
